@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-deep: #0a0a0f;
+  --bg-surface: #111116;
+  --bg-card: rgba(20, 22, 32, 0.7);
+  --border-glow: rgba(88, 130, 255, 0.25);
+  --primary: #587aff;
+  --primary-light: #7b9aff;
+  --primary-glow: rgba(88, 122, 255, 0.4);
+  --text-primary: #f0f2fa;
+  --text-secondary: #b0b5d0;
+  --text-muted: #6e728f;
+  --success: #2ad4a6;
+  --warning: #ffbc6e;
+  --gradient-1: linear-gradient(135deg, #587aff 0%, #8b5cf6 100%);
+  --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 12px rgba(88, 122, 255, 0.3);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a24;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+h1, h2, h3, .logo {
+  font-family: 'Space Grotesk', monospace;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+section {
+  position: relative;
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, #587aff, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
