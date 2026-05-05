@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="app.css">
   <style>
-    /* Emergency fixes - in case external CSS fails */
+    /* Emergency fixes */
     .hero-wrapper {
       display: flex !important;
       align-items: center !important;
@@ -52,10 +52,9 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
   <nav>
     <div class="container nav-container">
-      <div class="logo">Sam.ai</div>
+      <div class="logo">Samarth.ai</div>
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -68,7 +67,6 @@
   </nav>
 
   <main>
-    <!-- Hero Section with Photo -->
     <section id="home">
       <div class="container">
         <div class="hero-wrapper">
@@ -88,14 +86,14 @@
           </div>
           <div class="hero-photo">
             <div class="photo-frame">
-            <img src="image.png" alt="Samarth Kale">
+              <img src="image.png" alt="Samarth Kale">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Rest of your sections (about, projects, skills, contact) remain the same -->
     <section id="about">
       <div class="container">
         <div class="section-header">
@@ -128,7 +126,6 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
       <div class="container">
         <div class="section-header">
@@ -231,7 +228,6 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
       <div class="container">
         <div class="section-header">
@@ -289,7 +285,6 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
       <div class="container contact-wrapper">
         <div class="contact-info">
@@ -328,5 +323,40 @@
   </main>
 
   <script src="portfolio.js"></script>
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === "#") return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Button handlers
+    document.getElementById('projectCta')?.addEventListener('click', () => {
+      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    });
+    document.getElementById('contactCta')?.addEventListener('click', () => {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    });
+    document.getElementById('resumeBtn')?.addEventListener('click', () => {
+      window.open('https://docs.google.com/document/d/1T1yh66OvrEfkvSwyMvteQrTf-Z5kQ701EvDrhrgV4bc/edit?usp=drivesdk', '_blank');
+    });
+
+    // Form handler
+    const form = document.getElementById('contactForm');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert("✨ Thanks for reaching out! Samarth will get back to you within 24 hours.");
+        form.reset();
+      });
+    }
+  </script>
 </body>
 </html>
